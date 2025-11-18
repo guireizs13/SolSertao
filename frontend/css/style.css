@@ -1,0 +1,150 @@
+:root {
+    --primary-color: #2c3e50; 
+    --accent-color: #27ae60;  
+    --bg-color: #f4f7f6;      
+    --card-bg: #ffffff;
+    --text-color: #333333;
+    --solar-yellow: #f1c40f;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.header {
+    background: linear-gradient(135deg, var(--primary-color), #34495e);
+    color: white;
+    padding: 15px 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+.header-content h1 {
+    margin: 0;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.header-content h1 i {
+    color: var(--solar-yellow);
+}
+.header-content p {
+    margin: 5px 0 0 0;
+    font-size: 14px;
+    opacity: 0.8;
+    font-weight: 300;
+}
+.dashboard-container {
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: auto 1fr;   
+    gap: 20px;
+    padding: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+.cards-container {
+    grid-column: 1 / -1; 
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 20px;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 5px solid var(--primary-color);
+}
+
+.card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+}
+
+.card-economia { border-left-color: #27ae60; }
+.card-energia  { border-left-color: #f39c12; }
+.card-co2      { border-left-color: #2980b9; }
+.card-predios  { border-left-color: #8e44ad; }
+
+.icon-box {
+    font-size: 2rem;
+    width: 50px;
+    text-align: center;
+}
+
+.card-economia .icon-box { color: #27ae60; }
+.card-energia .icon-box  { color: #f39c12; }
+.card-co2 .icon-box      { color: #2980b9; }
+.card-predios .icon-box  { color: #8e44ad; }
+
+.card-info h2 {
+    margin: 0;
+    font-size: 14px;
+    color: #7f8c8d;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.card-info p {
+    margin: 5px 0 0 0;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.map-container, .chart-container {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; 
+}
+
+.panel-header {
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.panel-header h3 {
+    margin: 0;
+    font-size: 18px;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.subtitle {
+    font-size: 12px;
+    color: #95a5a6;
+}
+
+#map {
+    width: 100%;
+    height: 500px; 
+    z-index: 1; 
+}
+
+.chart-wrapper {
+    padding: 20px;
+    flex-grow: 1;
+    position: relative;
+    height: 460px; 
+}

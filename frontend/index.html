@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SolSertão - Dashboard (Salgueiro)</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-content">
+            <h1><i class="fa-solid fa-sun"></i> SolSertão</h1>
+            <p>Monitoramento de Energia Solar Pública | Salgueiro-PE</p>
+        </div>
+    </header>
+
+    <main class="dashboard-container">
+        
+        <section id="cards-container" class="cards-container">
+            <div class="card card-economia">
+                <div class="icon-box"><i class="fa-solid fa-sack-dollar"></i></div>
+                <div class="card-info">
+                    <h2>Economia Total</h2>
+                    <p id="card-economia-total">R$ ...</p>
+                </div>
+            </div>
+            <div class="card card-energia">
+                <div class="icon-box"><i class="fa-solid fa-bolt"></i></div>
+                <div class="card-info">
+                    <h2>Energia Gerada</h2>
+                    <p id="card-energia-total">... kWh</p>
+                </div>
+            </div>
+            <div class="card card-co2">
+                <div class="icon-box"><i class="fa-solid fa-leaf"></i></div>
+                <div class="card-info">
+                    <h2>CO₂ Evitado</h2>
+                    <p id="card-co2">... kg</p>
+                </div>
+            </div>
+            <div class="card card-predios">
+                <div class="icon-box"><i class="fa-solid fa-building-columns"></i></div>
+                <div class="card-info">
+                    <h2>Prédios</h2>
+                    <p id="card-predios">...</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="map-container" class="map-container">
+            <div class="panel-header">
+                <h3><i class="fa-solid fa-map-location-dot"></i> Mapa das Unidades</h3>
+                <span class="subtitle">Clique nos pinos para filtrar</span>
+            </div>
+            <div id="map"></div>
+        </section>
+
+        <section id="chart-container" class="chart-container">
+            <div class="panel-header">
+                <h3><i class="fa-solid fa-chart-line"></i> Desempenho Mensal</h3>
+            </div>
+            <div class="chart-wrapper">
+                <canvas id="meuGrafico"></canvas>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="js/main.js"></script>
+
+</body>
+</html>
